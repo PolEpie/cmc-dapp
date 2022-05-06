@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+	html {
+		@apply m-0 p-0 scroll-smooth;
+	}
+
+	body {
+		@apply m-0 p-0 font-josefin-sans;
+	}
+
+	.section {
+		@apply relative w-screen overflow-hidden;
+	}
+
+	.red-border {
+		@apply border-2 border-red-500;
+	}
+
+	.direction-rtl {
+		direction: rtl;
+	}
+
+	.direction-ltr {
+		direction: ltr;
+	}
+
+	.scrollbar::-webkit-scrollbar {
+		@apply bg-black w-[0.5vw];
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb {
+		@apply rounded-sm bg-[#C59DE1];
+	}
+
+
+	body::-webkit-scrollbar {
+		@apply hidden;
+	}
+
+	::selection {
+		@apply text-yellow-400 bg-purple-600;
+	}
+
+	::-moz-selection {
+		@apply text-yellow-400 bg-purple-600;
+	}
+}

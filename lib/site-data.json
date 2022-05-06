@@ -1,0 +1,50 @@
+{
+	"description": "Crypto Mining Club is an NFT project that mines Kadena. | Monthly $KDA mining rewards!",
+	"announcement": "OG Minting Soon!",
+	"links": {
+		"alphaVerify": "https://www.alpha-verifi.com/crypto-mining-club",
+		"twitter": "https://twitter.com/CryptoMiningLLC",
+		"discord": "https://discord.gg/cryptominingclub",
+		"openSea": "https://opensea.io/collection/cryptominingclub",
+		"whitepaper": "https://info-238.gitbook.io/crypto-mining-club"
+	},
+	"roadmap": [
+		{
+			"title": "Community Building",
+			"date": "2022 Q1",
+			"items": [
+				"Early active community members get rewarded with whitelist spots.",
+				"<span style='color: #9DE1A8'>250 NFTs</span> are allocated for marketing, giveaways, and community building",
+				"Whitelist Presale begins!"
+			]
+		},
+		{
+			"title": "Minting",
+			"date": "2022 Q1",
+			"items": [
+				"<span style='color: #C59DE1'>25% Minted:</span> Mining infrastructure setup<br />15 KD6 miners are ordered | 200 Ledger Nano S giveaway",
+				"<span style='color: #C59DE1'>50% Minted:</span> An additional 15 KD6 miners are ordered<br />Two 0.5 ETH giveaways",
+				"<span style='color: #C59DE1'>75% Minted:</span> An additional 20 KD6 miners are ordered<br />Two $25,000 charity giveaways",
+				"<span style='color: #C59DE1'>100% Minted:</span> An additional 20 KD6 miners are ordered | $100,000 in KDA miners giveaway"
+			]
+		},
+		{
+			"title": "Infrastructure",
+			"date": "2022 Q2",
+			"items": [
+				"Use NFT minting revenue for construction of <span style='color: #E39E9E'>mining warehouse</span>",
+				"Giveaway 10 KD5s to 10 lucky NFT holders",
+				"NFT holders will get access to special events"
+			]
+		},
+		{
+			"title": "Begin Expansion",
+			"date": "2022 Q3",
+			"items": [
+				"NFT holders vote on how to utilize proceeds from <span style='color: #9DE1A8'>community rewards wallet</span>",
+				"Real life benefits & sweepstakes",
+				"NFT holders will get access to special events"
+			]
+		}
+	]
+}
