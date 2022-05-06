@@ -15,7 +15,7 @@ const Header: React.FC = () => (
 				</li>
 
 				<li>
-					<a href='#faqs-section' className='group flex items-center justify-center'>
+					<a href='#faq-and-team-section' className='group flex items-center justify-center'>
 						<img src='/gems/2.png' alt='' className='absolute h-[4vw] opacity-50 group-hover:opacity-75 group-focus:opacity-75' />
 
 						<span className='absolute w-max text-[#E3FF89] font-bold'>FAQs</span>
@@ -39,7 +39,7 @@ const Header: React.FC = () => (
 				</li>
 
 				<li>
-					<a href='#team-section' className='group flex items-center justify-center'>
+					<a href='#faq-and-team-section' className='group flex items-center justify-center'>
 						<img src='/gems/5.png' alt='' className='absolute h-[4.5vw] opacity-50 group-hover:opacity-75 group-focus:opacity-75' />
 
 						<span className='absolute w-max text-[#E3FF89] font-bold'>The Team</span>

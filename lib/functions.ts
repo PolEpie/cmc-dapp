@@ -10,5 +10,21 @@ function onLinkClick(link: string) {
     });
 }
 
+function formatDuration(ms: number) {
+	const differenceInSeconds = ms / 1000;
 
-export { onLinkClick };
+	let days = Math.floor(differenceInSeconds / 60 / 60 / 24).toString();
+	let hours = Math.floor(differenceInSeconds / 60 / 60 % 24).toString();
+	let minutes = Math.floor(differenceInSeconds / 60 % 60).toString();
+	let seconds = Math.floor(differenceInSeconds % 60).toString();
+
+	return {
+		d: days,
+		h: hours,
+		m: minutes,
+		s: seconds
+	};
+}
+
+
+export { onLinkClick, formatDuration };

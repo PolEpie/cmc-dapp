@@ -8,6 +8,7 @@ declare global {
 			NEXT_PUBLIC_CONTRACT_ADDRESS: string;
 			NEXT_PUBLIC_INFURA_KEY: string;
 			NEXT_PUBLIC_VERCEL_URL: string;
+			NEXT_PUBLIC_COUNTDOWN_TIMESTAMP: string;
 		}
 	}
 

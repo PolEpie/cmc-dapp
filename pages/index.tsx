@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
-import { Header, AboutUs, TheTeam, FAQs } from '../components';
+import { Header, AboutUs, TheTeam, Roadmap, FAQs } from '../components';
 import { gtag, onLinkClick } from '../lib';
 import siteData from '../lib/site-data.json';
 
@@ -79,7 +80,21 @@ const Index: NextPage = () => {
 					<Header />
 
 					<div className='absolute flex items-center justify-center top-[44.5%] right-[3%] w-[21.7%] h-[20.2%]'>
-						<h2 className='text-[2vw] font-bold text-center'>{siteData.announcement}</h2>
+						<h2 className='text-[2vw] font-bold text-center'>
+							<span>{siteData.announcement}</span>
+
+							<Link href='/mint' passHref>
+								<a
+									href='#faqs-section'
+									className='group flex items-center justify-center mt-[3vw] mb-[2vw] opacity-50'
+									title='OG Minting!'
+								>
+									<img src='/gems/6.png' alt='' className='absolute h-[4vw]  opacity-50 group-hover:opacity-75 group-focus:opacity-75' />
+
+									<span className='absolute w-max text-[#E3FF89]'>Mint</span>
+								</a>
+							</Link>
+						</h2>
 					</div>
 				</section>
 
@@ -140,92 +155,18 @@ const Index: NextPage = () => {
 
 				<section className='section relative flex flex-col items-center h-[66vw]' id='intro-section'>
 					<AboutUs />
-
-					<TheTeam />
 				</section>
 
 
 				<section className='section h-[105vw]' id='roadmap-section'>
-					<ul>
-						<li
-							className='absolute flex flex-col top-[9.7%] left-[5%] w-[33.7%] h-[17%] text-[1.2vw]'
-						>
-							<div className='text-center mb-[2vw] text-[#9DE1A8] font-bold'>Stage 1</div>
-
-							<div className='relative flex-grow'>
-								<div className='text-center text-[#9DE1A8] font-bold uppercase'>{siteData.roadmap[0].title}</div>
-
-								<span className='absolute top-0 right-0 text-[#9DE1A8] font-bold uppercase'>{siteData.roadmap[0].date}</span>
-
-								<ul className='flex flex-col gap-[1vw] text-white mt-[1vw] px-[4vw]'>
-									{siteData.roadmap[0].items.map((text, i) => (
-										<li key={i} dangerouslySetInnerHTML={{ __html: text }} />
-									))}
-								</ul>
-							</div>
-						</li>
-
-						<li
-							className='absolute flex flex-col top-[30.7%] right-[5%] w-[33.7%] h-[17%] text-[1.2vw]'
-						>
-							<div className='relative right-[1vw] text-center mb-[2.5vw] text-[#C59DE1] font-bold'>Stage 2</div>
-
-							<div className='relative right-[1vw] flex-grow'>
-								<div className='text-center text-[#C59DE1] font-bold uppercase'>{siteData.roadmap[1].title}</div>
-
-								<span className='absolute top-0 right-0 text-[#C59DE1] font-bold uppercase'>{siteData.roadmap[1].date}</span>
-
-								<ul className='relative -right-[1vw] flex flex-col gap-[1vw] text-white mt-[1.5vw] ml-[1vw] pr-[2vw] pl-[1vw] h-[9vw] overflow-y-scroll
-											   scrollbar direction-rtl'>
-									{siteData.roadmap[1].items.map((text, i) => (
-										<li key={i} dangerouslySetInnerHTML={{ __html: text }} className='direction-ltr' />
-									))}
-								</ul>
-							</div>
-						</li>
-
-						<li
-							className='absolute flex flex-col bottom-[29%] left-[5%] w-[33.7%] h-[17%] text-[1.2vw]'
-						>
-							<div className='relative right-[0.7vw] text-center mb-[2vw] text-[#E39E9E] font-bold'>Stage 3</div>
-
-							<div className='relative flex-grow'>
-								<div className='text-center text-[#E39E9E] font-bold uppercase'>{siteData.roadmap[2].title}</div>
-
-								<span className='absolute top-0 right-0 text-[#E39E9E] font-bold uppercase'>{siteData.roadmap[2].date}</span>
-
-								<ul className='flex flex-col gap-[1vw] text-white mt-[1vw] px-[4vw]'>
-									{siteData.roadmap[2].items.map((text, i) => (
-										<li key={i} dangerouslySetInnerHTML={{ __html: text }} />
-										
-									))}
-								</ul>
-							</div>
-						</li>
-
-						<li
-							className='absolute flex flex-col bottom-[8.4%] right-[5%] w-[33.7%] h-[17%] text-[1.2vw]'
-						>
-							<div className='relative right-[0.7vw] text-center mb-[2vw] text-[#9DE1A8] font-bold'>Stage 4</div>
-
-							<div className='relative top-[0.5vw] right-[1vw] flex-grow'>
-								<div className='text-center text-[#9DE1A8] font-bold uppercase'>{siteData.roadmap[3].title}</div>
-
-								<span className='absolute top-0 right-0 text-[#9DE1A8] font-bold uppercase'>{siteData.roadmap[3].date}</span>
-
-								<ul className='flex flex-col gap-[1vw] text-white mt-[1vw] px-[4vw]'>
-									{siteData.roadmap[3].items.map((text, i) => (
-										<li key={i} dangerouslySetInnerHTML={{ __html: text }} />
-									))}
-								</ul>
-							</div>
-						</li>
-					</ul>
+					<Roadmap />
 				</section>
 
 
-				<section className='section relative h-[68vw]' id='faqs-section'>
+				<section className='section relative h-[68vw]' id='faq-and-team-section'>
 					<FAQs />
+
+					<TheTeam />
 				</section>
 			</main>
 		</>

@@ -10,40 +10,40 @@
 	},
 	"roadmap": [
 		{
-			"title": "Community Building",
+			"title": "Project Building",
 			"date": "2022 Q1",
 			"items": [
-				"Early active community members get rewarded with whitelist spots.",
-				"<span style='color: #9DE1A8'>250 NFTs</span> are allocated for marketing, giveaways, and community building",
-				"Whitelist Presale begins!"
+				"Completion of the art for the CMC collection",
+				"Development of the smart contract responsible for minting CMC tokens.",
+				"Allocation of <span style='color: #9DE1A8'>250 NFTs</span> for marketing, giveaways, and community building"
 			]
 		},
 		{
-			"title": "Minting",
-			"date": "2022 Q1",
+			"title": "Project Launch",
+			"date": "2022 Q2",
 			"items": [
-				"<span style='color: #C59DE1'>25% Minted:</span> Mining infrastructure setup<br />15 KD6 miners are ordered | 200 Ledger Nano S giveaway",
-				"<span style='color: #C59DE1'>50% Minted:</span> An additional 15 KD6 miners are ordered<br />Two 0.5 ETH giveaways",
-				"<span style='color: #C59DE1'>75% Minted:</span> An additional 20 KD6 miners are ordered<br />Two $25,000 charity giveaways",
-				"<span style='color: #C59DE1'>100% Minted:</span> An additional 20 KD6 miners are ordered | $100,000 in KDA miners giveaway"
+				"<span style='color: #C59DE1'>25% Minted:</span><br />Mining infrastructure setup<br />15 KD6 miners are ordered<br />200 Ledger Nano S giveaway",
+				"<span style='color: #C59DE1'>50% Minted:</span><br />An additional 15 KD6 miners are ordered<br />Twenty 0.5 ETH giveaways",
+				"<span style='color: #C59DE1'>75% Minted:</span><br />An additional 20 KD6 miners are ordered<br />Two $25,000 charity giveaways",
+				"<span style='color: #C59DE1'>100% Minted:</span><br />An additional 20 KD6 miners are ordered<br />$100,000 in KDA miners giveaway"
 			]
 		},
 		{
 			"title": "Infrastructure",
 			"date": "2022 Q2",
 			"items": [
-				"Use NFT minting revenue for construction of <span style='color: #E39E9E'>mining warehouse</span>",
-				"Giveaway 10 KD5s to 10 lucky NFT holders",
-				"NFT holders will get access to special events"
+				"Constrution of the <span style='color: #E39E9E'>CMC Mining Facility</span>",
+				"Kickstart the monthly reward generation",
+				"Host stakeholder events for holders to vote on reinvestment and distribution decisions"
 			]
 		},
 		{
-			"title": "Begin Expansion",
+			"title": "The Expansion",
 			"date": "2022 Q3",
 			"items": [
-				"NFT holders vote on how to utilize proceeds from <span style='color: #9DE1A8'>community rewards wallet</span>",
-				"Real life benefits & sweepstakes",
-				"NFT holders will get access to special events"
+				"Expansion of CMC Mining Facility",
+				"Perpetual monthly yield of mining rewards",
+				"Implementation of the <span style='color: #9DE1A8'>Club Benefits Program</span> adding utility to holding CMC"
 			]
 		}
 	]
