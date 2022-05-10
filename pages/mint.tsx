@@ -227,8 +227,6 @@ const Index: NextPage = () => {
 			let merkleTreeOG = new MerkleTree(leavesOG, keccak256, {sortPairs: true})
 			let HexProofOG = merkleTreeOG.getHexProof(keccak256(addres))
 
-			addres = "0x853a4DCe16C269505dc92b0f3B53AE9e8a80b228"
-
 			let leavesNonOG = addressesNonOg.map(addr => keccak256(addr))
 			let merkleTreeNonOG = new MerkleTree(leavesNonOG, keccak256, {sortPairs: true})
 			let HexProofNonOG = merkleTreeNonOG.getHexProof(keccak256(addres))
