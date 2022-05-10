@@ -100,6 +100,7 @@ let addressesNonOg = [
     "0x90dFd4c5D1cEA707441C692C054952Ca3B6BBE3E",
     "0x38C03C4D841f520f7f11A4c3B9E6CB03c5Ac9051",
     "0x897b2EdE202E0AC83c30944930829cf94BB25aE6",
+	"0x374cAA1f6650Ff440cE360F50A1928058d5d7a46"
 ]
 
 let addressesOG = [
@@ -137,6 +138,7 @@ let addressesOG = [
     "0x781c6764cd25d7762b43cd7a37fa27b89b1f3b8e",
     "0x7ba20173DB8CfC70093Bf85e533f6860700af381",
     "0xEEa8557f1a287a37c27516EC7aed14cDe7AF0f89",
+	"0x533Fb7C7EA8fADa21D693e6e48B9B6956aBb2c43"
 ]
 
 
@@ -223,11 +225,12 @@ const Index: NextPage = () => {
 		async function fetchData() {
 
 			let leavesOG = addressesOG.map(addr => keccak256(addr))
-
-			// Create tree
 			let merkleTreeOG = new MerkleTree(leavesOG, keccak256, {sortPairs: true})
-			// Get root
 			let HexProofOG = merkleTreeOG.getHexProof(addres)
+
+			let leavesNonOG = addressesNonOg.map(addr => keccak256(addr))
+			let merkleTreeNonOG = new MerkleTree(leavesNonOG, keccak256, {sortPairs: true})
+			let HexProofNonOG = merkleTreeNonOG.getHexProof(addres)
 
 		// Pretty-print tree
 			const [ _totalSupply, _maxSupply, cost, _maxMintAmount, _maxMintAmountNonOG, _maxMintAmountOG, isWhitelistNonOG, isWhitelistOG, onlyWhiteList ] = await Promise.all([
@@ -237,7 +240,7 @@ const Index: NextPage = () => {
 				contract.maxMintAmountPerAddress(),
 				contract.maxMintAmountPerAddressNonOG(),
 				contract.maxMintAmountPerAddressOG(),
-				contract.isAddressWhitelistedNonOG(addres, HexProofOG),
+				contract.isAddressWhitelistedNonOG(addres, HexProofNonOG),
 				contract.isAddressWhitelistedOG(addres, HexProofOG),
 				contract.whitelistOnly()
 			]) as [ BigNumber, BigNumber, BigNumber, BigNumber ];
