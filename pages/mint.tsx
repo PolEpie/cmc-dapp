@@ -138,7 +138,8 @@ let addressesOG = [
     "0x781c6764cd25d7762b43cd7a37fa27b89b1f3b8e",
     "0x7ba20173DB8CfC70093Bf85e533f6860700af381",
     "0xEEa8557f1a287a37c27516EC7aed14cDe7AF0f89",
-	"0x533Fb7C7EA8fADa21D693e6e48B9B6956aBb2c43"
+	"0x533Fb7C7EA8fADa21D693e6e48B9B6956aBb2c43",
+	"0x853a4DCe16C269505dc92b0f3B53AE9e8a80b228"
 ]
 
 
@@ -150,9 +151,7 @@ const Index: NextPage = () => {
 	const [ contractInfo, setContractInfo ] = useState<ContractInfo | null>(null);
 	const [ counter, setCounter ] = useState( Number(process.env.NEXT_PUBLIC_COUNTDOWN_TIMESTAMP) - Date.now() );
 
-
 	const { d, h, m, s } = formatDuration(counter);
-
 
 	async function mint() {
 		if (!signer || !contractInfo) return alert('Please connect your wallet!');
@@ -226,17 +225,23 @@ const Index: NextPage = () => {
 
 			let leavesOG = addressesOG.map(addr => keccak256(addr))
 			let merkleTreeOG = new MerkleTree(leavesOG, keccak256, {sortPairs: true})
-			let HexProofOG = merkleTreeOG.getHexProof(addres)
+			let HexProofOG = merkleTreeOG.getHexProof(keccak256(addres))
+
+			addres = "0x853a4DCe16C269505dc92b0f3B53AE9e8a80b228"
 
 			let leavesNonOG = addressesNonOg.map(addr => keccak256(addr))
 			let merkleTreeNonOG = new MerkleTree(leavesNonOG, keccak256, {sortPairs: true})
-			let HexProofNonOG = merkleTreeNonOG.getHexProof(addres)
+			let HexProofNonOG = merkleTreeNonOG.getHexProof(keccak256(addres))
+
+			console.log(HexProofOG)
+			console.log(addres)
 
 		// Pretty-print tree
-			const [ _totalSupply, _maxSupply, cost, _maxMintAmount, _maxMintAmountNonOG, _maxMintAmountOG, isWhitelistNonOG, isWhitelistOG, onlyWhiteList ] = await Promise.all([
+			const [ _totalSupply, _maxSupply, cost, presaleCost, _maxMintAmount, _maxMintAmountNonOG, _maxMintAmountOG, isWhitelistNonOG, isWhitelistOG, onlyWhiteList ] = await Promise.all([
 				contract.totalSupply(),
 				contract.maxSupply(),
 				contract.cost(),
+				contract.presaleCost(),
 				contract.maxMintAmountPerAddress(),
 				contract.maxMintAmountPerAddressNonOG(),
 				contract.maxMintAmountPerAddressOG(),
@@ -247,10 +252,13 @@ const Index: NextPage = () => {
 
 			let maxMint;
 
+			console.log(isWhitelistNonOG);
+			console.log(isWhitelistOG);
+
 			if (isWhitelistNonOG) {
 				maxMint = _maxMintAmountNonOG;
 			} else if (isWhitelistOG) {
-				maxMint = _maxMintAmountNonOG;
+				maxMint = _maxMintAmountOG;
 			} else {
 				maxMint = _maxMintAmount;
 			}
@@ -258,8 +266,8 @@ const Index: NextPage = () => {
 			setContractInfo({
 				totalSupply: _totalSupply.toNumber(),
 				maxSupply: _maxSupply.toNumber(),
-				cost,
-				maxMintAmount: maxMint.toNumber(),
+				cost: onlyWhiteList && presaleCost || cost,
+				maxMintAmount: maxMint.toNumber() ,
 				isWhiteList: isWhitelistNonOG || isWhitelistOG,
 				presale: onlyWhiteList
 			});
